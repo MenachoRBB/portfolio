@@ -1,5 +1,6 @@
 ---
 import ProjectCard from '../components/ProjectCard.astro';
+import '../styles/style.css';
 ---
 
 <html lang="en">
@@ -17,32 +18,64 @@ import ProjectCard from '../components/ProjectCard.astro';
         <h2>Skills</h2>
         <ul>
           <li>
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/javascript.svg" alt="JavaScript" />
-            JavaScript (ES6+)
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="no-link-style">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/javascript.svg" alt="JavaScript" />
+              JavaScript (ES6+)
+            </a>
           </li>
           <li>
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/nodedotjs.svg" alt="Node.js" />
-            Node.js
+            <a href="https://docs.microsoft.com/en-us/dotnet/visual-basic/" target="_blank" class="no-link-style">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/visualstudio.svg" alt="Visual Basic" />
+              Visual Basic
+            </a>
           </li>
           <li>
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/react.svg" alt="React" />
-            React
+            <a href="https://en.cppreference.com/w/c/language" target="_blank" class="no-link-style">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/c.svg" alt="C" />
+              C
+            </a>
           </li>
           <li>
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/vuedotjs.svg" alt="Vue.js" />
-            Vue.js
+            <a href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank" class="no-link-style">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/csharp.svg" alt="C#" />
+              C#
+            </a>
           </li>
           <li>
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/mongodb.svg" alt="MongoDB" />
-            MongoDB
+            <a href="https://docs.oracle.com/javase/tutorial/" target="_blank" class="no-link-style">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/java.svg" alt="Java" />
+              Java
+            </a>
           </li>
           <li>
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/git.svg" alt="Git" />
-            Git / GitHub
+            <a href="https://docs.python.org/3/" target="_blank" class="no-link-style">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/python.svg" alt="Python" />
+              Python
+            </a>
           </li>
           <li>
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/docker.svg" alt="Docker" />
-            Docker
+            <a href="https://docs.astro.build/" target="_blank" class="no-link-style">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/astro.svg" alt="Astro" />
+              Astro
+            </a>
+          </li>
+          <li>
+            <a href="https://learn.microsoft.com/en-us/dotnet/framework/" target="_blank" class="no-link-style">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/dotnet.svg" alt=".NET Framework" />
+              .NET Framework
+            </a>
+          </li>
+          <li>
+            <a href="https://learn.microsoft.com/en-us/sql/sql-server/" target="_blank" class="no-link-style">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/microsoftsqlserver.svg" alt="SQL Server" />
+              SQL Server
+            </a>
+          </li>
+          <li>
+            <a href="https://www.php.net/docs.php" target="_blank" class="no-link-style">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/php.svg" alt="PHP" />
+              PHP
+            </a>
           </li>
         </ul>
 
@@ -104,218 +137,12 @@ import ProjectCard from '../components/ProjectCard.astro';
       </main>
     </div>
 
-    <!-- Styles -->
-    <style>
-      /* General Dark Mode Colors */
-      :root {
-        --background-color: #1e1e1e;
-        --text-color: #f1f1f1;
-        --accent-color: #00adb5;
-        --header-color: #393e46;
-        --sidebar-background: #222831;
-      }
-
-      /* Light Mode Colors */
-      body.light-mode {
-        --background-color: #ffffff;
-        --text-color: #000000;
-        --accent-color: #007acc;
-        --header-color: #f0f0f0;
-        --sidebar-background: #f9f9f9;
-      }
-
-      body {
-        margin: 0;
-        font-family: 'Arial', sans-serif;
-        background-color: var(--background-color);
-        color: var(--text-color);
-      }
-
-      .container {
-        display: flex;
-      }
-
-      /* Sidebar */
-      .sidebar {
-        background-color: var(--sidebar-background);
-        padding: 20px;
-        width: 250px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-        opacity: 0;
-        transform: translateX(-30px); /* Comienza desplazada a la izquierda */
-        transition: opacity 0.8s ease, transform 0.8s ease;
-      }
-
-      .sidebar.visible {
-        opacity: 1;
-        transform: translateX(0); /* Aparece suavemente */
-      }
-
-      .sidebar h2 {
-        color: var(--accent-color);
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-      }
-
-      .sidebar ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .sidebar ul li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-        font-size: 1.1rem;
-        padding: 10px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-      }
-
-      .sidebar ul li img {
-        width: 24px;
-        height: 24px;
-        margin-right: 10px;
-        filter: invert(1); /* Ajusta los colores para dark mode */
-      }
-
-      .sidebar ul li:hover {
-        background-color: var(--accent-color);
-        color: var(--background-color);
-        transform: translateX(5px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Toggle Switch Style */
-      .theme-switch {
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 34px;
-      }
-
-      .theme-switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-      }
-
-      .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        transition: 0.4s;
-        border-radius: 34px;
-      }
-
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        transition: 0.4s;
-        border-radius: 50%;
-      }
-
-      input:checked + .slider {
-        background-color: #007acc;
-      }
-
-      input:checked + .slider:before {
-        transform: translateX(26px);
-      }
-
-      body.light-mode input:checked + .slider {
-        background-color: #00adb5;
-      }
-
-      /* Main Content */
-      .content {
-        padding: 20px;
-        flex-grow: 1;
-      }
-
-      header {
-        background-color: var(--header-color);
-        padding: 30px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-      }
-
-      header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-      }
-
-      header p {
-        font-size: 1.2rem;
-        line-height: 1.5;
-      }
-
-      /* Projects Section */
-      #projects {
-        margin-bottom: 40px;
-      }
-
-      #projects h2 {
-        color: var(--accent-color);
-        font-size: 2rem;
-        margin-bottom: 20px;
-      }
-
-      .project-list {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      /* Fade-in Animation */
-      .fade-in {
-        opacity: 0;
-        transform: translateY(20px); /* Initial state */
-        transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-      }
-
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0); /* Final state */
-      }
-
-      /* Footer */
-      footer {
-        text-align: center;
-        padding: 20px 0;
-        font-size: 0.9rem;
-        color: #aaa;
-      }
-
-      footer a {
-        color: var(--accent-color);
-        text-decoration: none;
-      }
-
-      footer a:hover {
-        text-decoration: underline;
-      }
-    </style>
-
     <!-- Script -->
     <script>
       const themeToggle = document.getElementById('theme-toggle');
       const body = document.body;
 
-      // Verificar si themeToggle es un elemento HTMLInputElement
       if (themeToggle instanceof HTMLInputElement) {
-        // Mantener el tema seleccionado guardado en localStorage
         if (localStorage.getItem('theme') === 'light') {
           body.classList.add('light-mode');
           themeToggle.checked = true;
@@ -332,15 +159,14 @@ import ProjectCard from '../components/ProjectCard.astro';
         });
       }
 
-      // Fade-in effects
       window.addEventListener('DOMContentLoaded', () => {
         const sidebar = document.querySelector('.sidebar');
         sidebar.classList.add('visible');
 
         const faders = document.querySelectorAll('.fade-in');
         const appearOptions = {
-          threshold: 0.1, // 10% visible
-          rootMargin: "0px 0px -50px 0px" // Appear slightly earlier
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px"
         };
 
         const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {

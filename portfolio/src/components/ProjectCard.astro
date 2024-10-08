@@ -18,7 +18,7 @@ const { title, description, link, image } = Astro.props;
       background-color: var(--project-background-color, #393e46);
       padding: 20px;
       border-radius: 8px;
-      border: 1px solid var(--accent-color, #00adb5);
+      border: 1px solid var(--accent-color, #000000); /* Color negro en lugar de azul */
       align-items: center;
       transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
     }
@@ -26,7 +26,7 @@ const { title, description, link, image } = Astro.props;
     /* Light Mode for the Project Card */
     body.light-mode .project-card {
       background-color: #f9f9f9;
-      border-color: var(--accent-color, #007acc);
+      border-color: var(--accent-color, #000000); /* Color negro en lugar de azul */
       color: #333;
     }
 
@@ -51,13 +51,13 @@ const { title, description, link, image } = Astro.props;
     }
 
     .project-info h3 {
-      color: var(--accent-color);
+      color: var(--accent-color); /* Negro en lugar de azul */
       margin-top: 0;
       font-size: 1.5rem;
     }
 
     body.light-mode .project-info h3 {
-      color: #007acc; /* Accent color for light mode */
+      color: var(--accent-color, #000000); /* Negro en lugar de azul */
     }
 
     .project-info p {
@@ -66,11 +66,11 @@ const { title, description, link, image } = Astro.props;
     }
 
     body.light-mode .project-info p {
-      color: #333; /* Dark text for light mode */
+      color: #333; /* Texto oscuro para light mode */
     }
 
     .project-info a {
-      color: var(--accent-color);
+      color: var(--accent-color); /* Negro en lugar de azul */
       text-decoration: none;
     }
 
