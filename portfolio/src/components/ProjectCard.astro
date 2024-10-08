@@ -1,27 +1,80 @@
 ---
-const { title, description, link } = Astro.props;
+const { title, description, link, image } = Astro.props;
 ---
 
 <div class="project-card">
-  <h3>{title}</h3>
-  <p>{description}</p>
-  <a href={link} target="_blank">View Project</a>
+  <div class="project-image">
+    <img src={image} alt={title} />
+  </div>
+  <div class="project-info">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <a href={link} target="_blank">View Project</a>
+  </div>
 
   <style>
     .project-card {
-      border: 1px solid #ddd;
+      display: flex;
+      background-color: var(--project-background-color, #393e46);
       padding: 20px;
       border-radius: 8px;
-      text-align: center;
+      border: 1px solid var(--accent-color, #00adb5);
+      align-items: center;
+      transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
     }
-    .project-card h3 {
+
+    /* Light Mode for the Project Card */
+    body.light-mode .project-card {
+      background-color: #f9f9f9;
+      border-color: var(--accent-color, #007acc);
+      color: #333;
+    }
+
+    .project-image {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out; /* Smooth transition for the image */
+    }
+
+    .project-image img:hover {
+      transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    .project-info {
+      flex: 2;
+    }
+
+    .project-info h3 {
+      color: var(--accent-color);
       margin-top: 0;
+      font-size: 1.5rem;
     }
-    .project-card a {
-      color: #007acc;
+
+    body.light-mode .project-info h3 {
+      color: #007acc; /* Accent color for light mode */
+    }
+
+    .project-info p {
+      font-size: 1rem;
+      color: var(--text-color, #f1f1f1);
+    }
+
+    body.light-mode .project-info p {
+      color: #333; /* Dark text for light mode */
+    }
+
+    .project-info a {
+      color: var(--accent-color);
       text-decoration: none;
     }
-    .project-card a:hover {
+
+    .project-info a:hover {
       text-decoration: underline;
     }
   </style>

@@ -6,88 +6,303 @@ import ProjectCard from '../components/ProjectCard.astro';
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal portfolio showcasing my skills and projects">
-    <title>My Portfolio</title>
+    <meta name="description" content="Fullstack Developer Portfolio">
+    <title>Fullstack Developer Portfolio</title>
   </head>
   <body>
-    <header>
-      <h1>Welcome to My Portfolio</h1>
-      <p>Hi, I'm [Your Name], a passionate web developer.</p>
-    </header>
+    <div class="container">
+      <!-- Sidebar with skills and theme toggle button -->
+      <aside class="sidebar">
+        <h2>Skills</h2>
+        <ul>
+          <li>
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/javascript.svg" alt="JavaScript" />
+            JavaScript (ES6+)
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/nodedotjs.svg" alt="Node.js" />
+            Node.js
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/react.svg" alt="React" />
+            React
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/vuedotjs.svg" alt="Vue.js" />
+            Vue.js
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/mongodb.svg" alt="MongoDB" />
+            MongoDB
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/git.svg" alt="Git" />
+            Git / GitHub
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/docker.svg" alt="Docker" />
+            Docker
+          </li>
+        </ul>
 
-    <!-- About Section -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I am a web developer with a passion for building modern and responsive websites.
-        I have experience working with technologies like HTML, CSS, JavaScript, and frameworks
-        like Astro. I love learning new tools and improving my skills.
-      </p>
-    </section>
+        <!-- Theme toggle button -->
+        <button id="theme-toggle">Toggle Dark Mode</button>
+      </aside>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2>My Projects</h2>
+      <!-- Main content area -->
+      <main class="content">
+        <header>
+          <h1>Fullstack Developer Portfolio</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat ligula eget 
+            turpis malesuada, a ultricies velit vehicula. Curabitur sit amet mauris et velit ornare tincidunt. 
+            Fusce dignissim ut metus in malesuada.
+          </p>
+        </header>
 
-      <!-- Example of a reusable ProjectCard component -->
-      <div class="projects-grid">
-        <ProjectCard
-          title="Project 1"
-          description="A brief description of this project."
-          link="https://github.com/your-username/project1"
-        />
-        <ProjectCard
-          title="Project 2"
-          description="A brief description of this project."
-          link="https://github.com/your-username/project2"
-        />
-      </div>
-    </section>
+        <!-- Projects Section -->
+        <section id="projects">
+          <h2>Projects</h2>
 
-    <!-- Skills Section -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>Astro, React, Vue</li>
-        <li>Git, GitHub</li>
-      </ul>
-    </section>
+          <!-- List of projects with fade-in effect -->
+          <div class="project-list">
+            <div class="fade-in">
+              <ProjectCard
+                title="Project 1"
+                description="A complex web app built with React and Node.js."
+                link="https://github.com/your-username/project1"
+                image="https://via.placeholder.com/300x200.png?text=Project+1+Image"
+              />
+            </div>
+            <div class="fade-in">
+              <ProjectCard
+                title="Project 2"
+                description="A responsive e-commerce site built with Vue.js and MongoDB."
+                link="https://github.com/your-username/project2"
+                image="https://via.placeholder.com/300x200.png?text=Project+2+Image"
+              />
+            </div>
+            <div class="fade-in">
+              <ProjectCard
+                title="Project 3"
+                description="A social media platform using Node.js, Express, and MySQL."
+                link="https://github.com/your-username/project3"
+                image="https://via.placeholder.com/300x200.png?text=Project+3+Image"
+              />
+            </div>
+          </div>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p>If you want to get in touch, feel free to email me at <a href="mailto:youremail@example.com">youremail@example.com</a> or find me on social media.</p>
-    </section>
-
-    <footer>
-      <p>&copy; 2024 [Your Name]. All Rights Reserved.</p>
-    </footer>
+        <!-- Footer -->
+        <footer>
+          <p>&copy; 2024 [Your Name]. All Rights Reserved. Contact me at: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+        </footer>
+      </main>
+    </div>
 
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        padding: 0 20px;
+      /* General Dark Mode Colors */
+      :root {
+        --background-color: #1e1e1e;
+        --text-color: #f1f1f1;
+        --accent-color: #00adb5;
+        --header-color: #393e46;
+        --sidebar-background: #222831;
       }
 
-      header, section, footer {
+      /* Light Mode Colors */
+      body.light-mode {
+        --background-color: #ffffff;
+        --text-color: #000000;
+        --accent-color: #007acc;
+        --header-color: #f0f0f0;
+        --sidebar-background: #f9f9f9;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+      }
+
+      .container {
+        display: flex;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        background-color: var(--sidebar-background);
+        padding: 20px;
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        opacity: 0;
+        transform: translateX(-30px); /* Comienza desplazada a la izquierda */
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .sidebar.visible {
+        opacity: 1;
+        transform: translateX(0); /* Aparece suavemente */
+      }
+
+      .sidebar h2 {
+        color: var(--accent-color);
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .sidebar ul li img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+        filter: invert(1); /* Ajusta los colores para dark mode */
+      }
+
+      .sidebar ul li:hover {
+        background-color: var(--accent-color);
+        color: var(--background-color);
+        transform: translateX(5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Theme Toggle Button */
+      #theme-toggle {
+        padding: 10px;
+        margin-top: 20px;
+        background-color: var(--accent-color);
+        color: var(--background-color);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #theme-toggle:hover {
+        background-color: #007acc;
+      }
+
+      /* Main Content */
+      .content {
+        padding: 20px;
+        flex-grow: 1;
+      }
+
+      header {
+        background-color: var(--header-color);
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      header p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+
+      /* Projects Section */
+      #projects {
         margin-bottom: 40px;
       }
 
-      h1, h2 {
-        color: #333;
+      #projects h2 {
+        color: var(--accent-color);
+        font-size: 2rem;
+        margin-bottom: 20px;
       }
 
-      .projects-grid {
+      .project-list {
         display: flex;
+        flex-direction: column;
         gap: 20px;
       }
 
+      /* Fade-in Animation */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px); /* Initial state */
+        transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0); /* Final state */
+      }
+
+      /* Footer */
       footer {
         text-align: center;
-        font-size: 14px;
-        color: #666;
+        padding: 20px 0;
+        font-size: 0.9rem;
+        color: #aaa;
+      }
+
+      footer a {
+        color: var(--accent-color);
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
       }
     </style>
+
+    <script>
+      // Dark/Light Mode Toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+      });
+
+      // Fade-in effects
+      window.addEventListener('DOMContentLoaded', () => {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.classList.add('visible');
+
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+          threshold: 0.1, // 10% visible
+          rootMargin: "0px 0px -50px 0px" // Appear slightly earlier
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+              return;
+            } else {
+              entry.target.classList.add('visible');
+              appearOnScroll.unobserve(entry.target);
+            }
+          });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+          appearOnScroll.observe(fader);
+        });
+      });
+    </script>
   </body>
 </html>
